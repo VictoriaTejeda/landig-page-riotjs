@@ -11,7 +11,7 @@
       <Route path= "/contacto"><Contacto/></Route>
     </Router>
     <script>
-      import { Router, Route, setBase } from '@riotjs/route'
+      import { Router, Route} from '@riotjs/route'
       import Home from './pages/home.riot'
       import About from './pages/about.riot'
       import Education from './pages/education.riot'
@@ -19,17 +19,8 @@
       import Contacto from './pages/contacto.riot'
       import Hero from './components/global/hero/hero.riot'
       import Navbar from './components/global/navBar/nav-bar.riot'
-      import { initDomListeners } from '@riotjs/route'
+      import { initDomListeners } from '@riotjs/route'    
     
-        // in case you want to use the HTML5 history navigation
-      setBase(`/`)   
-
-      const unsubscribe = initDomListeners();
-// the router is connected to the page DOM
-
-// ...tear down and disconnect the router from the DOM
-      unsubscribe()    
-      
 
       export default {
          components:{ 
