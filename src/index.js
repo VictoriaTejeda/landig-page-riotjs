@@ -14,5 +14,3 @@ registerGlobalComponents()
 const app=myApp(document.getElementById('root'))
 // mount all the global components found in this page
 //mount('[data-riot-component]')
-
-

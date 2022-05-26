@@ -19,7 +19,7 @@ body {
   background-color: #f47c7c;
   width: 100%;
   position: fixed;
-  z-index: 3;
+  z-index: 4;
 }
 .nav-link {
   font-size: 1.3rem;

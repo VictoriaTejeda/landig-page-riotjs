@@ -7,7 +7,16 @@
            <li><span>status:</span>{ state.status }<li> 
         </ul>
     </section>
-        <Sidebar/>
+    <Sidebar/>
+    <div if={ state.showAct } >
+      <h3> Herramientas  y Sofware </h3>   
+       <ul>
+         <li class="list-group-item list-group-item-action list-group-item-primary" each={ item in state.tools }> { item.item }</li>
+       </ul>  
+     </div>
+     <div class= "row" >
+       <button class= "btn btn-info" onclick={toggleAct} >Herramientas  y Software </button>
+     </div>
     <script>
      import Sidebar from '../components/global/sidebar/sidebar.riot'
         export default{
@@ -16,11 +25,29 @@
             },
           onBeforeMount(props, state){
              this.state={
+              tools:[
+                  { item: 'ORACLE(NOMINA)'},
+                  { item: 'ASPEL (NOI-COI-SAE)'},
+                  { item: 'SUA'},
+                  { item: 'PAQUETERIA OFFICE'},
+                  { item: 'IDSE'},
+                  { item: 'SIPARE'},
+                  { item: 'SEFIPLAN'},
+                  { item: 'IMSS'},
+                  { item: 'INFONAVIT'},
+                  { item: 'SAT'}
+              ],
+              showAct: false,   
               degree:"Licenciatura",
               title:"Ing. en Gestión Empresarial.",
               status:"Titulo y cedula profesional."
              }
-        } 
+        },
+        toggleAct() {
+        this.update({
+          showAct: !this.state.showAct,
+        })
+      } 
         }
     </script>
     <style>
@@ -35,11 +62,21 @@
          font-size: 2vh;
          text-align:justify;
          margin:2vh;
+         padding:0;
      }
      span{
          color:#f47c7c;
          font-weight: 700;
          margin-right: 1vh;
+     }
+     @media (min-width: 1000px) and (orientation: landscape){
+       .education{
+         display: flex;
+         flex-direction: row;
+       }
+       h2{
+         margin-right:14vh
+       }
      }
     </style>
 </education>
