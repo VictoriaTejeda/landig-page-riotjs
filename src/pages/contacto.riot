@@ -1,3 +1,35 @@
 <contacto>
-    <h1>Contacto</h1>
+    <section class= "contacto">
+      <h1 class="name">Contacto</h1>
+      <p><i class="bi bi-geo-alt"></i> Orizaba Veracruz</p>
+      <p><i class="bi bi-telephone-inbound"></i> 27224489907</p>
+      <p><i class="bi bi-envelope"></i> idaigarcia15@gmail.com</p>
+    </section>
+    <style>
+        h1{ 
+            text-align: center;
+        }
+        .contacto{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-top:6vh;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            width:40vh;
+            height: 27vh;
+        }
+        i{
+            margin:1.5vh;
+            color:#7189BF;
+        }
+        @media (min-width: 1000px) and (orientation: landscape){
+            .contacto{
+            width:50vh;
+            height:30vh;
+            }
+            p{
+                font-size:3vh;
+            }
+        }
+    </style>
 </contacto>
