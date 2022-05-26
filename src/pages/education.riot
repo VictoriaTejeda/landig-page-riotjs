@@ -1,0 +1,45 @@
+<education style={"width:100%"}>
+     <section class="education">
+        <h2 class="name">ESTUDIOS ACADEMICOS</h2>
+        <ul>
+           <li><span>Nivel de estudios:</span> { state.degree }<li>
+           <li><span>Carrera:</span> { state.title }<li>
+           <li><span>status:</span>{ state.status }<li> 
+        </ul>
+    </section>
+        <Sidebar/>
+    <script>
+     import Sidebar from '../components/global/sidebar/sidebar.riot'
+        export default{
+            components:{
+                Sidebar
+            },
+          onBeforeMount(props, state){
+             this.state={
+              degree:"Licenciatura",
+              title:"Ing. en Gestión Empresarial.",
+              status:"Titulo y cedula profesional."
+             }
+        } 
+        }
+    </script>
+    <style>
+     .education{
+         margin-top:3vh;
+         display: flex;
+         flex-direction:column;
+         align-items: center;
+        }
+     ul{
+         list-style-type: none;
+         font-size: 2vh;
+         text-align:justify;
+         margin:2vh;
+     }
+     span{
+         color:#f47c7c;
+         font-weight: 700;
+         margin-right: 1vh;
+     }
+    </style>
+</education>

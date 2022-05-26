@@ -1,0 +1,30 @@
+<about>
+    <section class="about-me" id="about">
+        <h1 class="name">Soy {state.name}</h1>
+        <a><img src="https://i.ibb.co/pdYtwyz/idai.jpg" alt="idai-garcia" class="photo" border="0"></a>
+        <p class="content">{state.content}</p>
+    </section>
+    <script>
+     export default{
+         onBeforeMount(props, state){
+             this.state={
+                 name: "Idai García",
+                 content:"Mi proposito es aportar las mejores estrategias para el crecimiento e innovación de la empresa, gestionando eficientemente los recursos de la misma, aplicando habilidades con ética y responsabilidad."
+             }
+         }
+     }
+    </script>
+    <style>
+        .name{
+            text-align: center;
+        }
+        .photo{
+           border-radius:50%;
+        }
+        .content{
+            text-align: justify;
+            margin: 2vh;
+        }
+    </style>
+</about>
+

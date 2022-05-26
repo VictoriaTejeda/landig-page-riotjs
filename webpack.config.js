@@ -1,24 +1,24 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const webpack = require('webpack')
-const path = require('path')
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require("webpack");
+const path = require("path");
 
 module.exports = {
   entry: {
-    app: './src/index.js',
+    app: "./src/index.js",
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js',
-    clean: true
+    path: path.resolve(__dirname, "dist"),
+    filename: "[name].bundle.js",
+    clean: true,
   },
-  devtool: 'source-map',
+  devtool: "source-map",
   optimization: {
     runtimeChunk: {
-      name: 'runtime',
+      name: "runtime",
     },
     splitChunks: {
-      chunks: 'async',
+      chunks: "async",
       minSize: 20000,
       minRemainingSize: 0,
       minChunks: 1,
@@ -43,32 +43,37 @@ module.exports = {
     hot: true,
     open: true,
     historyApiFallback: {
-      index: 'index.html'
-    }
+      index: "index.html",
+    },
   },
   module: {
     rules: [
       {
         test: /\.riot$/,
         exclude: /node_modules/,
-        use: [{
-          loader: '@riotjs/webpack-loader',
-          options: {
-            hot: true
-          }
-        }]
+        use: [
+          {
+            loader: "@riotjs/webpack-loader",
+            options: {
+              hot: true,
+            },
+          },
+        ],
       },
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
-    ]
+    ],
+  },
+  resolve: {
+    fallback: { url: require.resolve("url/") },
   },
   plugins: [
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
+      template: "src/index.html",
     }),
     new webpack.HotModuleReplacementPlugin(),
-  ]
-}
+  ],
+};

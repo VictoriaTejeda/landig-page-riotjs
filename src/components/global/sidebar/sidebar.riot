@@ -1,14 +1,14 @@
-<sidebar>
+<sidebar style={"margin:1vh"}>
   <div>
     <div class="row">
-      <h1>Sidebar</h1>
+      <h1 style={ "color:#7189BF" }>Cursos</h1>
     </div>
     <div if={state.showUser} class="row">
-      <user name={ state.name }/>
+      <user conference={ state.conference } conference2={ state.conference2 } course={state.course} course2={state.course2} course3={state.course3}/>
     </div>
 
     <div class="row">
-      <button onclick={toggleUser}>Toggle username</button>
+      <button class= "btn btn-info" onclick={toggleUser} >Ver Cursos</button>
     </div>
   </div>
 
@@ -20,7 +20,11 @@
         User
       },
       state: {
-        name: 'John',
+        conference: 'Talentismo y emprendimiento: claves para triunfar en la época planetaria',
+        conference2:'Marcas y patentes.',
+        course:'Primeros auxilios.',
+        course2:'Capacitación auditor interno',
+        course3:'Análisis de nómina.',
         showUser: false
       },
       toggleUser() {

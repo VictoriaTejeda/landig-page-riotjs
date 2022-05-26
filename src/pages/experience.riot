@@ -1,0 +1,129 @@
+<experience>
+  <div class="wrap-exp">
+     <h1 class="name">Experiencia Laboral</h1>
+      <p>Da click para ver las actividades realizadas en cada periodo</p>
+    <div>
+      <div if={ state.showUser } > 
+        <h3> Analista de Recursos Humanos en Omnigreen S.A.P.I. de C.V.</h3>  
+        <ul>
+         <li class="list-group-item list-group-item-info" each={ item in state.items }> { item.title }</li>
+        </ul>  
+      </div>
+     <div >
+       <button class= "btn btn-info " onclick={toggleUser} >NOV 2019 - Actual </button>
+     </div>
+    </div>
+  <div>
+    <div if={ state.showExp } > 
+      <h3> Auxiliar de crédito y cobranza en Distribuidora Montosa S.A. de C.V.  </h3>  
+       <ul>
+         <li class="list-group-item list-group-item-action list-group-item-primary" each={ item in state.items }> { item.exp }</li>
+       </ul>  
+     </div>
+     <div >
+       <button class= "btn btn-info" onclick={toggleExp} >OCTUBRE 2018 – SEPTIEMBRE 2019 </button>
+     </div>
+  </div>
+  <div>
+    <div if={ state.showAct } >
+      <h3> Auxiliar contable en Mantenimiento y Construcciones Dinámicas S.A. de C.V. .  </h3>   
+       <ul>
+         <li class="list-group-item list-group-item-action list-group-item-primary" each={ item in state.act }> { item.title }</li>
+       </ul>  
+     </div>
+     <div >
+       <button class= "btn btn-info" onclick={toggleAct} >ENERO 2018 – SEPTIEMBRE 2018: </button>
+     </div>
+  </div>
+  </div>
+
+  <script>
+    import List from '../components/includes/list.riot'
+
+    export default {
+      components: {
+        List
+      },
+      state: {
+        items:[
+         { title: 'Elaboración de nómina semanal y quincenal (500 colaboradores)',
+           epx: 'Contrataciones, armado de expedientes'},
+         { title: 'Interfaz de nómina NOI-COI',
+           exp: 'Altas, bajas y modificaciones en Sistema Oracle, SUA e IDSE.'},
+         { title: 'Análisis de variaciones de nómina',
+           exp: 'Elaboración de nómina semanal y quincenal.'},
+         { title: 'Provisiones mensuales',
+           exp: 'Interfaz Oracle (Nomina – contabilidad)'},
+         { title: 'KPI´s de nómina (Ausentismo, permisos, tiempo extra y finiquitos)',
+           exp: 'Timbrado de nómina.'},
+         { title: 'Contrataciones y armado de expedientes, alta y bajas en sistema IDSE-SUA',
+           exp: 'Manejo de efectivo.'},
+         { title: 'Seguimiento de pagos IMSS, SAR, INFONAVIT y 3%.',
+           exp: 'Comprobaciones'},
+         { title: 'Atención a personal operativo y de confianza',
+           exp: 'Conciliaciones bancarias, ingresos y egresos.'},
+         { title: 'Timbrado de nómina',
+           exp: 'Atención a personal operativo y de confianza.'},
+         { title: 'Reclutamiento',
+           exp: 'Seguimiento a préstamos y descuentos'},
+         { title: 'Publicación de vacantes',
+           exp: 'Custodia y archivo de documentos confidenciales.'},
+         { title: 'Seguimiento de auditoría interna y externa',
+           exp: 'Contrataciones, armado de expedientes'}
+         ],
+        act:[
+         { title: 'Atención a clientes.' },
+         { title: 'Supervisión de equipo de reparto.' },
+         { title: 'Captura y control de los productos de salida y entrega a crédito.' },
+         { title: 'Recuperación de cartera vencida.' },
+         { title: 'Archivo y custodia de documentos.' }
+         ],
+        showUser: false,
+        showExp: false,
+        showAct: false
+      },
+      toggleUser() {
+        this.update({
+          showUser: !this.state.showUser,
+        })
+      },
+      toggleExp() {
+        this.update({
+          showExp: !this.state.showExp,
+        })
+      },
+      toggleAct() {
+        this.update({
+          showAct: !this.state.showAct,
+        })
+      }
+    }
+   </script>
+   <style>
+   .wrap-exp{
+    margin-top: 8vh;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+   }
+    p{
+       text-align: center;
+    }
+    h3{
+       color:#7189BF;
+       margin:1.5vh;
+       text-align: center;
+    }
+    button{
+       margin:2vh;
+       width: 50vh !important
+    },
+    .list-group-item{
+       width: 70%;
+    }
+   </style>
+</experience>
+ 
